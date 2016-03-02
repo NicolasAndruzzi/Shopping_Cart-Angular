@@ -1,0 +1,62 @@
+<div id="tableTop">
+  <div id="shoppingLeft"><h3>My Shopping Bag</h3></div>
+  <div id="shoppingRight"><h3>Order Total: $__.__<h3></div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th id="th1Shop">
+        <div id="th1Text">Product</div>
+      </th>
+      <th id="th2Shop">
+        <div id="th2Text">Quantity</div>
+      </th>
+      <th id="th3Shop">
+        <div id="th3Text">Subtotal</div>
+      </th>
+      <th id="th4Shop">
+      </th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="tea in teaList | filter:nameSearch | filter:categorySearch | orderBy:sort">
+    <tr>
+      <td>
+        <center>
+          <img src="{{tea.imageUrl}}">
+        </center>
+      </td>
+      <td>
+        <div id="trLeft">
+          <u><h3>{{tea.name}}</h3></u>
+          <b>Price:</b> {{tea.price/100 | currency}}<br><br>
+          <b>Caffeine scale:</b> {{tea.caffeineScale}}<br><br>
+          <b>Ingredients:</b> {{tea.ingredients}}<br><br>
+          <b>Rating:</b> {{tea.rating}}<br><br>
+          <span ng-show="tea.inStock"><b>In stock?</b> Yes</span>
+          <span ng-show="!tea.inStock"><b>In stock?</b> No</span><br><br>
+          <b>Categories:</b>
+          <ul ng-repeat="category in tea.categories">
+            <li>{{category}}</li>
+          </ul>
+        </div>
+        <div id="trRight">
+          <label id="quantity"><b>Quantity:</b>
+            <select>
+              <option value="1" selected="selected">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </label>
+          <button type="button" class="btn btn-default" id="addButton">Add to bag</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

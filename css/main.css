@@ -1,0 +1,157 @@
+#centerAll {
+  width: 95vw;
+  height: 100vh;
+  margin-left: 2.5vw;
+}
+
+#headerTopText {
+  width: 100%;
+  height: 3vh;
+  background-color: #FD644D;
+  color: white;
+  font-size: 2vh;
+  text-align: center;
+  line-height: 3vh;
+}
+
+#headerMainText {
+  width: 100vw;
+  height: 10vh;
+  color: #FD644D;
+  font-size: 8vh;
+  line-height: 10vh;
+}
+
+.navOption {
+  color: grey;
+}
+
+#tableTop {
+  width: 100%;
+  height: 7vh;
+  /*background-color: green;*/
+  margin-top: 2.5vh;
+  position: relative;
+}
+
+#topFilters {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /*background-color: red;*/
+}
+
+#shoppingLeft {
+  position: absolute;
+  bottom: 0;
+  left: 1vw;
+  /*background-color: red;*/
+  font-size: 7vh;
+  height: 7vh;
+}
+
+#checkoutButton {
+  background-color: #D75452;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#shoppingRight {
+  position: absolute;
+  bottom: 0;
+  right: 2vw;
+  /*background-color: red;*/
+  font-size: 7vh;
+  height: 7vh;
+}
+
+table {
+  margin-top: 1vh;
+  width: 100%
+}
+
+table, th, td {
+  border: 1px solid grey;
+}
+
+#th1 {
+  width: 30%;
+  height: 5vh;
+}
+
+#th1Shop {
+  width: 60%;
+  height: 5vh;
+}
+
+#th2 {
+  height: 5vh;
+}
+
+#th2Shop {
+  width: 7.5%;
+  height: 5vh;
+}
+
+#th3 {
+  height: 5vh;
+}
+
+#th3Shop {
+  width: 7.5%;
+  height: 5vh;
+}
+
+#th4Shop {
+  height: 5vh;
+  background-color: grey;
+}
+
+#th1Text {
+  margin-left: 1vw;
+}
+
+#th2Text {
+  float: left;
+  margin-left: 1vw;
+}
+
+#th3Text {
+  margin-left: 1vw;
+}
+
+#th2Sort {
+  float: right;
+  margin-right: 1vw;
+}
+
+#trLeft {
+  float: left;
+  margin: -1vh 0 1vh 1vw;
+}
+
+#trRight {
+  /*float: right;*/
+  margin: 2vh 0;
+  /*background-color: red;*/
+  height: 4vh;
+  line-height: 4vh;
+  position: absolute;
+  right: 3.5vw;
+}
+
+#quantity {
+  float: left;
+  font-size: 2vh;
+}
+
+#addButton {
+  float: right;
+  margin-left: 1vw;
+  height: 4vh;
+  line-height: 2vh;
+  background-color: #F5B965;
+  color: white;
+}

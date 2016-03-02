@@ -1,0 +1,76 @@
+<div id="tableTop">
+  <div id="topFilters">
+    <label>Search by category:
+      <!-- <select ng-init="categoryGrabber()"> -->
+      <select ng-model="categorySearch.categories">
+        <option selected="selected" disabled="disabled"></option>
+        <option ng-repeat="category in allCategories" value="{{category}}">{{category}}</option>
+        <option value="">Don't Sort by Category</option>
+      </select>
+    </label>
+    <label>Search by name:
+      <input type="text" ng-model="nameSearch.name" placeholder="Enter name of tea here...">
+    </label>
+  </div>
+  <a href="#/checkout"><button button type="button" class="btn btn-default btn-lg" id="checkoutButton">Checkout | Bag: {{bagQuantity}}</button></a>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th id="th1">
+        <div id="th1Text">Tea</div>
+      </th>
+      <th id="th2">
+        <div id="th2Text">Information</div>
+        <label id="th2Sort">Sort by price:
+          <select ng-model="sort">
+            <option value="price">Lowest($) &#8594; Highest($$$)</option>
+            <option value="-price">Highest($$$) &#8594; Lowest($)</option>
+            <option value="null">Don't Sort by Price</option>
+          </select>
+        </label>
+      </th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="tea in teaList | filter:nameSearch | filter:categorySearch | orderBy:sort">
+    <tr>
+      <td>
+        <center>
+          <img src="{{tea.imageUrl}}">
+        </center>
+      </td>
+      <td>
+        <div id="trLeft">
+          <u><h3>{{tea.name}}</h3></u>
+          <b>Price:</b> {{tea.price/100 | currency}}<br><br>
+          <b>Caffeine scale:</b> {{tea.caffeineScale}}<br><br>
+          <b>Ingredients:</b> {{tea.ingredients}}<br><br>
+          <b>Rating:</b> {{tea.rating}}<br><br>
+          <span ng-show="tea.inStock"><b>In stock?</b> Yes</span>
+          <span ng-show="!tea.inStock"><b>In stock?</b> No</span><br><br>
+          <b>Categories:</b>
+          <ul ng-repeat="category in tea.categories">
+            <li>{{category}}</li>
+          </ul>
+        </div>
+        <div id="trRight">
+          <label id="quantity"><b>Quantity:</b>
+            <select ng-model="tea.quantity" ng-init="tea.quantity = 1">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </label>
+          <button type="button" class="btn btn-default" id="addButton" ng-click="addToBag(tea)">Add to bag</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

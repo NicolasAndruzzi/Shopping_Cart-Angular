@@ -18,24 +18,42 @@
       </th>
     </tr>
   </thead>
-  <tbody ng-repeat="tea in teaList | filter:nameSearch | filter:categorySearch | orderBy:sort">
+  <tbody ng-repeat="checkoutItem in cartItems">
     <tr>
       <td>
-        <center>
-          <img src="{{tea.imageUrl}}">
-        </center>
+        <div id="con1">
+          <u><h3>{{checkoutItem.name}}</h3></u>
+        </div>
+      </td>
+      <td>
+        <div id="con2">
+        </div>
+      </td>
+      <td>
+        <div id="con3">
+        </div>
+      </td>
+      <td>
+        <div id="con4">
+        </div>
+      </td>
+    </tr>
+
+    <!-- <tr>
+      <td>
+          <img src="{{checkoutItem.imageUrl}}">
       </td>
       <td>
         <div id="trLeft">
-          <u><h3>{{tea.name}}</h3></u>
-          <b>Price:</b> {{tea.price/100 | currency}}<br><br>
-          <b>Caffeine scale:</b> {{tea.caffeineScale}}<br><br>
-          <b>Ingredients:</b> {{tea.ingredients}}<br><br>
-          <b>Rating:</b> {{tea.rating}}<br><br>
-          <span ng-show="tea.inStock"><b>In stock?</b> Yes</span>
-          <span ng-show="!tea.inStock"><b>In stock?</b> No</span><br><br>
+          <u><h3>{{checkoutItem.name}}</h3></u>
+          <b>Price:</b> {{checkoutItem.price/100 | currency}}<br><br>
+          <b>Caffeine scale:</b> {{checkoutItem.caffeineScale}}<br><br>
+          <b>Ingredients:</b> {{checkoutItem.ingredients}}<br><br>
+          <b>Rating:</b> {{checkoutItem.rating}}<br><br>
+          <span ng-show="checkoutItem.inStock"><b>In stock?</b> Yes</span>
+          <span ng-show="!checkoutItem.inStock"><b>In stock?</b> No</span><br><br>
           <b>Categories:</b>
-          <ul ng-repeat="category in tea.categories">
+          <ul ng-repeat="category in checkoutItem.categories">
             <li>{{category}}</li>
           </ul>
         </div>
@@ -57,6 +75,6 @@
           <button type="button" class="btn btn-default" id="addButton">Add to bag</button>
         </div>
       </td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>

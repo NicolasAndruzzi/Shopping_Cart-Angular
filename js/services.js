@@ -123,55 +123,19 @@ app.service('teaService', function() {
     }
   ]
 
+  this.bagQuantity = "Empty!";
 
-  var bag = [];
-  this.bag = bag;
-  this.bagQuantity = "Empty!!";
-  this.addToBag = function(tea) {
+  var checkoutBag = [];
+  this.addToBag = function(preBagTea) {
     // console.log("add to bag");
-    var preBagTea = {};
-    preBagTea.price = tea.price;
-    preBagTea.quantity = tea.quantity;
-    preBagTea.subtotal = parseInt(preBagTea.price / 100 * preBagTea.quantity).toFixed(2);
-    preBagTea.name = tea.name;
-    preBagTea.imageUrl = tea.imageUrl;
-    preBagTea.caffeineScale = tea.caffeineScale;
-    preBagTea.ingredients = tea.ingredients;
-    preBagTea.rating = tea.rating;
-    bag.push(preBagTea);
-    console.log(bag);
+    checkoutBag.push(preBagTea);
+    this.bagQuantity = checkoutBag.length;
   }
 
-// var bag = [];
-// this.bag = bag;
-// // this.checkoutBag = "Empty!"
-// this.addToBag = function(tea) {
-//   var teaToAdd = {};
-//   teaToAdd.subtotal = (tea.qty * tea.price);
-//   teaToAdd.price = tea.price;
-//   teaToAdd.qty = tea.qty;
-  // teaToAdd.name = tea.name;
-  // teaToAdd.imageUrl = tea.imageUrl;
-  // teaToAdd.caffeineScale = tea.caffeineScale;
-  // teaToAdd.ingredients = tea.ingredients;
-  // teaToAdd.rating = tea.rating;
-//   bag.push(teaToAdd);
-//   console.log(bag);
-//   // $scope.checkoutBag = bag.length;
-//   // if ($scope.checkoutBag === 0) {
-//   //   $scope.checkoutBag = "Empty!"
-//   // }
-// }
-//
-// this.remove = function(item) {
-//   for (var i = 0; i < this.$parent.bag.length; i++) {
-//     if (this.$parent.bag[i].$$hashKey == item.$$hashKey) {
-//       bag.splice(i, 1);
-//     }
-//   }
-//   console.log(this.$parent.bag);
-//   // console.log(this.$parent.bag[1]);
-//   console.log(item.$$hashKey);
-// }
+  this.getter = function() {
+    return checkoutBag.length
+  };
+
+  this.checkoutBagObject = checkoutBag
 
 });

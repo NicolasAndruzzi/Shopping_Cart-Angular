@@ -3,7 +3,22 @@ app.controller('HomeController', ['$scope', '$http', 'teaService',  function ($s
   console.log(teaService);
   $scope.teaList = teaService.teaList;
   $scope.bagQuantity = teaService.bagQuantity;
-  $scope.addToBag = teaService.addToBag;
+  // $scope.addToBag = teaService.addToBag;
+  $scope.addToBag = function(tea) {
+    var preBagTea = {};
+    preBagTea.price = tea.price;
+    preBagTea.quantity = tea.quantity;
+    preBagTea.subtotal = parseInt(preBagTea.price / 100 * preBagTea.quantity).toFixed(2);
+    preBagTea.name = tea.name;
+    preBagTea.imageUrl = tea.imageUrl;
+    preBagTea.caffeineScale = tea.caffeineScale;
+    preBagTea.ingredients = tea.ingredients;
+    preBagTea.rating = tea.rating;
+
+    teaService.addToBag(preBagTea)
+    $scope.bagQuantity = teaService.getter()
+  };
+
 
   $scope.allCategories = ["dark", "cold", "awesome", "dry", "hot", "summer", "lucid", "warm", "winter", "spring"];
   // $scope.categoryGrabber = function() {

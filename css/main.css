@@ -155,3 +155,24 @@ table, th, td {
   background-color: #F5B965;
   color: white;
 }
+
+#checkoutListContainer {
+  margin-left: 1vw;
+  background-color: red;
+}
+
+#con1 {
+  margin-left: 1vw;
+}
+
+#con2 {
+  margin-left: 1vw;
+}
+
+#con3 {
+  margin-left: 1vw;
+}
+
+#con4 {
+  margin-left: 1vw;
+}
